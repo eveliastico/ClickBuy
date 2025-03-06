@@ -1,0 +1,19 @@
+{
+  "name": "clickbuy-apirest",
+  "version": "1.0.0",
+  "description": "A simple REST API built with Express.js",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
