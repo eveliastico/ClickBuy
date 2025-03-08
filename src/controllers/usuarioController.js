@@ -1,3 +1,5 @@
+import { ObjectId } from 'mongodb';
+import usuarioModelo from '../models/modelos/usuarioModelo.js';
 import usuariosModel from '../models/modelos/usuarioModelo.js';
 
 class usuarioController{
@@ -6,10 +8,14 @@ class usuarioController{
 
     async create(req, res){
         try {
-            //const data = usuariosModel.create(req.body);
-            usuariosModel.create();
-            res.status(201).json({message: 'Usuario creado'});
-        } catch (error) {
+            const respuesta = await usuariosModel.create(req.body);
+            if (respuesta.acknowledged){
+                res.status(200).json({message: 'Usuario creado'});
+            }else{
+                res.status(500).json({message: 'Error al crear usuario'});
+                console.log(respuesta)
+            }
+        }catch (error) {
             res.status(500).send(error);
             console.log(error);
         }
@@ -17,7 +23,8 @@ class usuarioController{
 
     async update(req, res){
         try {
-            res.status(201).json({message: 'Usuario actualizado'});
+            const respuesta = await usuariosModel.update(req.params.id, req.body);
+            res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);
             console.log(error);
@@ -26,7 +33,8 @@ class usuarioController{
 
     async delete(req, res){
         try {
-            res.status(201).json({message: 'Usuario eliminado'});
+            const respuesta = await usuariosModel.delete(req.params.id);
+            res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);
             console.log(error);
@@ -35,7 +43,8 @@ class usuarioController{
 
     async getAll(req, res){
         try {
-            res.status(201).json({message: 'Usuarios obtenidos'});
+            const respuesta = await usuariosModel.getAll();
+            res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);
             console.log(error);
@@ -44,7 +53,12 @@ class usuarioController{
 
     async getOne(req, res){
         try {
-            res.status(201).json({message: 'Usuario obtenido'});
+            //Params: parametro que llega por la URL
+            // De esta forma se puede obtener el parametro especifico id en este caso.
+            //const {id} = req.params;
+            //Query params: parametro que llega por la URL
+            const respuesta = await usuariosModel.getOne(req.params.id);
+            res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);
             console.log(error);
