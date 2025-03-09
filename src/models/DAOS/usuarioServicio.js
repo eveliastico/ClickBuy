@@ -2,7 +2,7 @@ import { ObjectId } from 'mongodb';
 import dbClient from '../../config/dbClient.js';
 const coleccionUsuarios = dbClient.obtenerColeccion('usuarios');
 
-class usuarioModelo{
+class usuarioServicio{
 
     async create(usuario){
         try {
@@ -61,4 +61,4 @@ class usuarioModelo{
     }
 }
 
-export default new usuarioModelo();
+export default new usuarioServicio();

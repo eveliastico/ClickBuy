@@ -2,6 +2,8 @@ import 'dotenv/config';
 import express from 'express';
 import rutaUsuarios from './routes/rutaUsuarios.js';
 import bodyParser from 'body-parser';
+import dbClient from './config/dbClient.js';
+import dbClientMongoose from './config/dbClientMongoose.js';
 
 const app = express();
 
@@ -18,3 +20,8 @@ try {
 } catch (error) {
     console.error('Error al correr el servidor: ', error);
 }
+
+process.on('SIGINT', async () => {
+    dbClientMongoose.desconectarBD();
+    process.exit(0);
+});
