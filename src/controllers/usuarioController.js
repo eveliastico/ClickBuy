@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import usuariosSerivicio from '../models/DAOS/usuarioDAO.js';
+import usuariosDAO from '../models/DAOS/usuarioDAO.js';
 
 class usuarioController{
     constructor(){
@@ -7,7 +7,7 @@ class usuarioController{
 
     async create(req, res){
         try {
-            const respuesta = await usuariosSerivicio.create(req.body);
+            const respuesta = await usuariosDAO.create(req.body);
             /*
             En mongodb se pede usar acknowledge para saber si se realizo la operacion
             acknowledge = true -> se realizo la operacion,
@@ -28,7 +28,7 @@ class usuarioController{
 
     async update(req, res){
         try {
-            const respuesta = await usuariosSerivicio.update(req.params.id, req.body);
+            const respuesta = await usuariosDAO.update(req.params.id, req.body);
             res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);
@@ -38,7 +38,7 @@ class usuarioController{
 
     async delete(req, res){
         try {
-            const respuesta = await usuariosSerivicio.delete(req.params.id);
+            const respuesta = await usuariosDAO.delete(req.params.id);
             res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);
@@ -48,7 +48,7 @@ class usuarioController{
 
     async getAll(req, res){
         try {
-            const respuesta = await usuariosSerivicio.getAll();
+            const respuesta = await usuariosDAO.getAll();
             res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);
@@ -62,7 +62,7 @@ class usuarioController{
             // De esta forma se puede obtener el parametro especifico id en este caso.
             //const {id} = req.params;
             //Query params: parametro que llega por la URL
-            const respuesta = await usuariosSerivicio.getOne(req.params.id);
+            const respuesta = await usuariosDAO.getOne(req.params.id);
             res.status(200).json(respuesta);
         } catch (error) {
             res.status(500).send(error);

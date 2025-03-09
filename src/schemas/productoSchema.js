@@ -14,11 +14,11 @@ const productoSchema = new mongoose.Schema({
     },
     imagenes: [String],
     categoria: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: 'Categoria'
     },
     tienda: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: 'Tienda',
         required: true
     }
