@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const itemPedidoSchema = new mongoose.Schema({
     producto: { 
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Types.ObjectId, 
         ref: 'Producto', 
         required: true 
     },
@@ -14,6 +14,9 @@ const itemPedidoSchema = new mongoose.Schema({
         type: Number, 
         required: true 
     }
+},{
+    colllection: 'itemsPedidos'
 });
 
-export default mongoose.model('ItemPedido', itemPedidoSchema);
+//export default mongoose.model('ItemPedido', itemPedidoSchema);
+export default itemPedidoSchema;

@@ -1,9 +1,10 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import itemPedidoSchema from "./itemPedidoSchema.js";
+//const {itemPedidoSchema} = require('./itemPedidoSchema').Schema;
 
 const pedidoSchema = new mongoose.Schema({
     usuario: { 
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Types.ObjectId, 
         ref: 'Usuario', 
         required: true 
     },
