@@ -2,6 +2,8 @@ import { ObjectId } from 'mongodb';
 import dbClient from '../../config/dbClient.js';
 const coleccionUsuarios = dbClient.obtenerColeccion('usuarios');
 
+//ESTA CLASE NO LA USEN, SOLO LA DEJE COMO PRACTICA CON MONGODB
+//LA BUENA ES LA DE USUARIODAO.JS
 class usuarioServicio{
 
     async create(usuario){

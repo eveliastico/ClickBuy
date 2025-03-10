@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const itemCarritoSchema = new mongoose.Schema({
     producto: {
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Types.ObjectId, 
         ref: 'Producto', 
         required: true 
     },

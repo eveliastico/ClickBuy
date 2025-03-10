@@ -13,7 +13,7 @@ const tiendaSchema = new mongoose.Schema({
 
     },
     propietario: {
-        type: Schema.Types.ObjectId, ref: 'Usuario',
+        type: mongoose.Types.ObjectId, ref: 'Usuario',
          required: true
     },
     // Campo "aprobado" indica si la tienda fue aprobada por el administrador

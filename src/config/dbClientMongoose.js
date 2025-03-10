@@ -20,10 +20,6 @@ class dbClient{
         }
     }
 
-    obtenerColeccion(nombre){
-        return this.client.db().collection(nombre);
-    }
-
     async desconectarBD(){
         try{
             await mongoose.disconnect();

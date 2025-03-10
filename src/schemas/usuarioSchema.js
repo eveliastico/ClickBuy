@@ -31,7 +31,8 @@ const usuarioSchema = new mongoose.Schema({
     timestamps: true,
     // Hace que el esquema sea estricto, es decir, no se pueden agregar 
     // campos que no esten definidos en el esquema
-    strict: true
+    strict: true,
+    collection: 'usuarios'
 }
 );
 
