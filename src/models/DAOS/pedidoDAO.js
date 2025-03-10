@@ -31,7 +31,7 @@ class pedidoDAO {
             }
         }
     
-        async update(id, producto){
+        async update(id, pedido){
             try {
                 //tmbn puede usarse (_id: id) en lugar de (_id: new mongoose.Types.ObjectId(id))
                 return await pedidoSchema.findOneAndUpdate({_id: new mongoose.Types.ObjectId(id)}, pedido, {new: true});

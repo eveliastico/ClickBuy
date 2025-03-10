@@ -27,7 +27,7 @@ class usuarioServicio{
 
     async getOne(id){
         try {
-            return await Usuarios.findById({_id: new mongoose.Types.ObjectId(id)});
+            return await Usuario.findById({_id: new mongoose.Types.ObjectId(id)});
         } catch (error) {
             console.error('Error al obtener un usuario...'+ error);
         }finally{
