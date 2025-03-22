@@ -4,12 +4,12 @@ import mongoose from "mongoose";
 //pero de todas formas lo dejo aqui.
 const resenaSchema = new mongoose.Schema({
     producto: {
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Types.ObjectId, 
         ref: 'Producto', 
         required: true 
     },
     usuario: { 
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Types.ObjectId, 
         ref: 'Usuario', 
         required: true 
     },
