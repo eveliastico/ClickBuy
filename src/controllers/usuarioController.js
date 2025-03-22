@@ -1,5 +1,6 @@
 import { ObjectId } from 'mongodb';
 import usuariosDAO from '../models/DAOS/usuarioDAO.js';
+const {MWError} = require('../utils/mwError.js');
 
 class usuarioController{
     constructor(){

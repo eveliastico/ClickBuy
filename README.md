@@ -25,3 +25,6 @@ Recomendacion
     }
     Para correr la app se usara npm : npm run dev
 
+    Se agregaron los modulos winston, winstone-express y morgan:
+    npm i winston winston-express morgan
+

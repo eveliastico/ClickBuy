@@ -7,8 +7,12 @@ import rutaProductos from './routes/rutaProductos.js';
 import rutaTienda from './routes/rutaTienda.js';
 import rutaItemCarrito from './routes/rutaItemCarrito.js';
 import rutaPedido from './routes/rutaPedido.js';
-
+const {adminError, MWError} = require('./utils/mwError.js');
+const morgan = require('morgan');
 const app = express();
+app.use(morgan('combined'));
+//Middleware para el manejo de errores
+app.use(adminError);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
