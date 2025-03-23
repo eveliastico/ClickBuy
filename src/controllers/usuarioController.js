@@ -6,7 +6,7 @@ class usuarioController{
     constructor(){
     }
 
-    async create(req, res){
+    async create(req, res, next){
         try {
             const respuesta = await usuariosDAO.create(req.body);
             /*
@@ -16,58 +16,73 @@ class usuarioController{
             operacion se realizo con exito o no.
             */
             if (respuesta){
-                res.status(200).json({message: 'Usuario creado'});
+                res.status(201).json({message: 'Usuario creado'});
             }else{
-                res.status(500).json({message: 'Error al crear usuario'});
-                console.log(respuesta)
+                throw new MWError('Error al crear el usuario', 500);
             }
         }catch (error) {
-            res.status(500).send(error);
-            console.log(error);
+            //Pasa el error al middleware de errores
+            next(error);
         }
     }
 
-    async update(req, res){
+    async update(req, res, next){
         try {
             const respuesta = await usuariosDAO.update(req.params.id, req.body);
-            res.status(200).json(respuesta);
+            if (respuesta) {
+                res.status(202).json({message: 'El usuario a sido actualizado '}, respuesta);
+            }else {
+                throw new MWError('Error al actualizar el usuario', 500);
+            }
         } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
+            //Pasa el error al middleware de errores
+            next(error);
         }
     }
 
-    async delete(req, res){
+    async delete(req, res, next){
         try {
             const respuesta = await usuariosDAO.delete(req.params.id);
-            res.status(200).json(respuesta);
+            if (respuesta) {
+                res.status(200).json({message: 'Usuario eliminado con exito'});  
+            }else {
+                throw new MWError('Error al eliminar el usuario',500);
+            }
         } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
+            //Pasa el error al middleware de errores
+            next(error);
         }
     }
 
-    async getAll(req, res){
+    async getAll(req, res, next){
         try {
             const respuesta = await usuariosDAO.getAll();
-            res.status(200).json(respuesta);
+            if (respuesta) {
+                res.status(200).json({message: 'Lista de todos los usuarios'},respuesta);   
+            } else {
+                throw new Error('Error al listar todos los usuarios',500);
+            }
         } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
+            //Pasa el error al middleware de errores
+            next(error);
         }
     }
 
-    async getOne(req, res){
+    async getOne(req, res, next){
         try {
             //Params: parametro que llega por la URL
             // De esta forma se puede obtener el parametro especifico id en este caso.
             //const {id} = req.params;
             //Query params: parametro que llega por la URL
             const respuesta = await usuariosDAO.getOne(req.params.id);
-            res.status(200).json(respuesta);
+            if (respuesta) {
+                res.status(200).json({message: 'Se encontro el usuario con exito '},respuesta);
+            } else {
+               throw new MWError('Error al buscar el usuario', 500); 
+            }
         } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
+            //Pasa el error al middleware de errores
+            next(error);
         }
     }
 }
