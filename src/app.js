@@ -9,6 +9,8 @@ import rutaItemCarrito from './routes/rutaItemCarrito.js';
 import rutaPedido from './routes/rutaPedido.js';
 import { MWError, adminError } from './utils/mwError.js';
 import morgan from 'morgan';
+import rutaReseña from './routes/rutaReseña.js'
+
 const app = express();
 
 
@@ -24,6 +26,7 @@ app.use('/productos', rutaProductos);
 app.use('/tienda', rutaTienda);
 app.use('/item_carrito', rutaItemCarrito);
 app.use('/pedido', rutaPedido);
+app.use('/resena', rutaReseña)
 
 app.all('*', (req, res, next)=> {
     next(new MWError(`No se pudo acceder a ${req.originalUrl} en el servidor.`, 404));
