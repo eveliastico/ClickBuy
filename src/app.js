@@ -12,6 +12,7 @@ import morgan from 'morgan';
 const app = express();
 
 
+app.use(express.json());
 //Configurar el middleware de morgan para el registro de solicitudes
 app.use(morgan('combined'));
 
@@ -25,8 +26,7 @@ app.use('/item_carrito', rutaItemCarrito);
 app.use('/pedido', rutaPedido);
 
 app.all('*', (req, res, next)=> {
-    const error = new MWError(`No se ha podido acceder a ${req.originalUrl} en el servidor.`, 404);
-    next(error);
+    next(new MWError(`No se pudo acceder a ${req.originalUrl} en el servidor.`, 404));
 });
 //Middleware para el manejo de errores
 app.use(adminError);

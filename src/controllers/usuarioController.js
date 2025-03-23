@@ -16,7 +16,7 @@ class usuarioController{
             operacion se realizo con exito o no.
             */
             if (respuesta){
-                res.status(201).json({message: 'Usuario creado'});
+                res.status(201).json({message: 'Usuario creado con éxito'});
             }else{
                 throw new MWError('Error al crear el usuario', 500);
             }
@@ -58,7 +58,7 @@ class usuarioController{
         try {
             const respuesta = await usuariosDAO.getAll();
             if (respuesta) {
-                res.status(200).json({message: 'Lista de todos los usuarios'},respuesta);   
+                res.status(200).json({message: 'Lista de todos los usuarios '}, respuesta);   
             } else {
                 throw new Error('Error al listar todos los usuarios',500);
             }
@@ -76,7 +76,7 @@ class usuarioController{
             //Query params: parametro que llega por la URL
             const respuesta = await usuariosDAO.getOne(req.params.id);
             if (respuesta) {
-                res.status(200).json({message: 'Se encontro el usuario con exito '},respuesta);
+                res.status(200).json({message: 'Se encontro el usuario con exito '}, respuesta);
             } else {
                throw new MWError('Error al buscar el usuario', 500); 
             }
