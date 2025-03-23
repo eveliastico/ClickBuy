@@ -1,5 +1,8 @@
 import { ObjectId } from 'mongodb';
 import usuariosDAO from '../models/DAOS/usuarioDAO.js';
+import jsonwebtoken from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import { generarToken } from '../helpers/autenticacion.js';
 
 class usuarioController{
     constructor(){
@@ -68,6 +71,51 @@ class usuarioController{
             res.status(500).send(error);
             console.log(error);
         }
+    }
+
+    async register(req, res){
+        try{
+            const {correoElectronico, nombre, contrasena, tipoUsuario} = req.body;
+
+            const usuarioExiste = await usuariosDAO.getOne({ correoElectronico });
+            if (usuarioExiste){
+                return res.status(400).json({ error: 'El usuario ya existe' });
+            }
+
+            const claveEncryptada = await bcrypt.bash(contrasena, 10);
+            
+            const data = await usuariosDAO.create({
+                correoElectronico,
+                nombre,
+                tipoUsuario,
+                contrasena: claveEncryptada
+
+            });
+
+            res.status(201).json(data);
+        } catch (e) {
+            console.log(e);
+            res.status(500).send(e);
+        }
+    }
+
+    async login(req, res){
+        const { correoElectronico, contrasena} = req.body;
+
+        const usuarioExiste = await usuariosDAO.getOne({ correoElectronico });
+        if (!usuarioExiste) {
+            return res.status(400).json({ error: 'El usuario no existe '});
+        }
+
+        const claveValida = await bcrypt.compare(contrasena, usuarioExiste.constrasena);
+        
+        if(!claveValida) {
+            return res.status(400).json({ error: 'Clave no valida'});
+        }
+
+        const token = generarToken(email);
+
+        return res.status(200).json({ msg: 'Usuario autenticado', token});
     }
 }
 

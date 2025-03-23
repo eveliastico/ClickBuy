@@ -9,9 +9,11 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.12.1"
   },
   "devDependencies": {
@@ -21,5 +23,13 @@
   },
   "keywords": [],
   "author": "Jorge E",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eveliastico/ClickBuy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eveliastico/ClickBuy/issues"
+  },
+  "homepage": "https://github.com/eveliastico/ClickBuy#readme"
 }
