@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb';
 import usuariosDAO from '../models/DAOS/usuarioDAO.js';
-const {MWError} = require('../utils/mwError.js');
+import { MWError } from '../utils/mwError.js';
 
 class usuarioController{
     constructor(){
@@ -30,7 +30,7 @@ class usuarioController{
         try {
             const respuesta = await usuariosDAO.update(req.params.id, req.body);
             if (respuesta) {
-                res.status(202).json({message: 'El usuario a sido actualizado '}, respuesta);
+                res.status(202).json({message: 'El usuario fue actualizado correctamente '}, respuesta);
             }else {
                 throw new MWError('Error al actualizar el usuario', 500);
             }

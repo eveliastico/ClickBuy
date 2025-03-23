@@ -1,4 +1,4 @@
-const winston = require('winston');
+import winston from 'winston';
 
 //Configura winston para registrar errores en un archivo .log
 const logger = winston.createLogger({
@@ -18,7 +18,7 @@ class MWError extends Error{
 }
 
 //La funcion middleware que manejara los errores
-const adminError = (err , sol, res, sig) =>{
+const adminError = (err , req, res, next) =>{
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'error';
     logger.error(err.message);
@@ -30,7 +30,4 @@ const adminError = (err , sol, res, sig) =>{
     });
 }
 
-module.exports = {
-    MWError,
-    adminError
-}
+export {MWError, adminError};
