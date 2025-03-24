@@ -68,3 +68,7 @@
 {"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
 {"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
 {"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios ' }"}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
