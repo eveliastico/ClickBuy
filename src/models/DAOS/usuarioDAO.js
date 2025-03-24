@@ -46,8 +46,11 @@ class usuarioServicio{
     }
 
     async getByEmail(correoElectronico) {
+        console.log(`CORREO: ${correoElectronico}`)
         try {
-            return await Usuario.findOne({ correoElectronico });
+            
+            return await Usuario.findOne({correoElectronico});
+            
         } catch (error) {
             console.error('Error al obtener un usuario por correo electrónico: ' + error);
             throw new Error('Error al obtener el usuario'); // Manejo de errores
