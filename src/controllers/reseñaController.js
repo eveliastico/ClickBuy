@@ -51,7 +51,7 @@ class reseñaController{
             console.log(`Error al eliminar la reseña: ${error}`)
         }
     }*/
-    delete = catchAsync(async (req, res, next)=>{
+    delete = catchAsync(async (req, res, next)=> {
         const respuesta = await reseñaDAO.delete(req.params.id, res.body);
         if(!respuesta) throw new MWError('No se pudo eliminar la reseña', 500);
         res.status(200).json({data: respuesta}) 
@@ -66,7 +66,7 @@ class reseñaController{
             console.log(`Error al obtener las reseñas: ${error}`)
         }
     }*/
-    getAll = catchAsync(async (req, res, next)=>{
+    getAll = catchAsync(async (req, res, next)=> {
         const respuesta = await reseñaDAO.getAll();
         if(!respuesta)  throw new MWError('Error al listar todas las reseñas', 404);
         res.status(200).json({data: respuesta})
@@ -81,7 +81,7 @@ class reseñaController{
             console.log(`Error al obtener el usuario: ${error}`)
         }
     }*/
-    getOne = catchAsync(async (req, res, next)=>{
+    getOne = catchAsync(async (req, res, next)=> {
         const respuesta = await reseñaDAO.getOne(req.params.id, res);
         if(!respuesta) throw new MWError('No se encontro la reseña', 404);
         res.status(200).json({data: respuesta})
