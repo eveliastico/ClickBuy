@@ -7,7 +7,7 @@ import usuarioSchema from '../schemas/usuarioSchema.js';
 // En esta clase se definen las rutas que se pueden usar
 
 route.post('/register',usuarioController.create);
-route.post('/login', usuarioController.login);
+route.get('/login', usuarioController.login);
 route.get('/:id', usuarioController.getOne);
 route.get('/', usuarioController.getAll);
 route.put('/:id', usuarioController.update);

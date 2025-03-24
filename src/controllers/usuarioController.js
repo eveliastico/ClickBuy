@@ -85,8 +85,8 @@ class usuarioController{
 
     async login(req, res){
         const { correoElectronico, contrasena} = req.body;
-
-        const usuarioExiste = await usuariosDAO.getByEmail( correoElectronico );
+        console.log(`CORREO 1: ${correoElectronico}`)
+        const usuarioExiste = await usuariosDAO.getByEmail(correoElectronico);
         if (!usuarioExiste) {
             return res.status(400).json({ error: 'El usuario no existe '});
         }
@@ -98,7 +98,7 @@ class usuarioController{
         }
 */
         if(usuarioExiste.contrasena == contrasena){
-            const token = generarToken(email);
+            const token = generarToken(correoElectronico);
             return res.status(200).json({ msg: 'Usuario Autenticado', token});
         } else{
             return res.status(500).json({ error: 'Contraseña incorrecta'});           
