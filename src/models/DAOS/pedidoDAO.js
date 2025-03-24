@@ -4,52 +4,25 @@ import mongoose, { Schema } from 'mongoose';
 class pedidoDAO {
 
     async create(pedido){
-            try {
-                return await pedidoSchema.create(pedido);
-            } catch (error) {
-                console.error('Error al crear un pedido...'+ error);
-            }finally{
-                
-            }
-        }
+        return await pedidoSchema.create(pedido);
+    }
     
-        async getAll(){
-            try {
-                return await pedidoSchema.find(); 
-            } catch (error) {
-                console.error('Error al obtener los pedidos...'+ error);
-            }finally{
-            }
-        }
+    async getAll(){
+        return await pedidoSchema.find(); 
+    }
     
-        async getOne(id){
-            try {
-                return await pedidoSchema.findById({_id: new mongoose.Types.ObjectId(id)});
-            } catch (error) {
-                console.error('Error al obtener un pedido...'+ error);
-            }finally{
-            }
-        }
+    async getOne(id){
+        return await pedidoSchema.findById({_id: new mongoose.Types.ObjectId(id)});
+    }
     
-        async update(id, pedido){
-            try {
-                //tmbn puede usarse (_id: id) en lugar de (_id: new mongoose.Types.ObjectId(id))
-                return await pedidoSchema.findOneAndUpdate({_id: new mongoose.Types.ObjectId(id)}, pedido, {new: true});
-            } catch (error) {
-                console.error('Error al actualizar un pedido...');
-                console.log(error);
-            }finally{
-            }
-        }
+    async update(id, pedido){
+        //tmbn puede usarse (_id: id) en lugar de (_id: new mongoose.Types.ObjectId(id))
+        return await pedidoSchema.findOneAndUpdate({_id: new mongoose.Types.ObjectId(id)}, pedido, {new: true});
+    }
     
-        async delete(id){
-            try {
-                return await pedidoSchema.findOneAndDelete({_id: new mongoose.Types.ObjectId(id)});
-            } catch (error) {
-                console.error('Error al eliminar un pedido...'+ error);
-            }finally{
-            }
-        }
+    async delete(id){
+        return await pedidoSchema.findOneAndDelete({_id: new mongoose.Types.ObjectId(id)});
+    }
 }
 
 export default new pedidoDAO();

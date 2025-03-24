@@ -1,74 +1,40 @@
 import productoDAO from '../models/DAOS/productoDAO.js';
+import catchAsync from '../utils/catchAsync.js';
+import { MWError } from '../utils/mwError.js';
 
 class productoController{
     constructor(){
     }
 
-    async create(req, res){
-        try {
-            const respuesta = await productoDAO.create(req.body);
-            /*
-            En mongodb se pede usar acknowledge para saber si se realizo la operacion
-            acknowledge = true -> se realizo la operacion,
-            pero en mongoose no se puede usar acknowledge porque ya devuelve si la 
-            operacion se realizo con exito o no.
-            */
-            if (respuesta){
-                res.status(200).json({message: 'Producto creado'});
-            }else{
-                res.status(500).json({message: 'Error al crear producto'});
-                console.log(respuesta)
-            }
-        }catch (error) {
-            res.status(500).send(error);
-            console.log(error);
-        }
-    }
+    create = catchAsync(async (req, res, next)=> {
+        const respuesta = await productoDAO.create(req.body);
+        if(!respuesta) throw new MWError('Error al registrar el producto', 500);
+        res.status(200).json({message: 'Producto creado', data: respuesta});
+    });
 
-    async update(req, res){
-        try {
-            const respuesta = await productoDAO.update(req.params.id, req.body);
-            res.status(200).json(respuesta);
-        } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
-        }
-    }
+    update = catchAsync(async (req, res, next)=> {
+        const respuesta = await productoDAO.update(req.params.id, req.body);
+        if(!respuesta) throw new MWError('Error al actualizar el producto', 500);
+        res.status(200).json({message: 'El producto fue actualizado correctamente', data: respuesta});   
+    });
 
-    async delete(req, res){
-        try {
-            const respuesta = await productoDAO.delete(req.params.id);
-            res.status(200).json(respuesta);
-        } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
-        }
-    }
+    delete = catchAsync(async (req, res, next)=> {
+        const respuesta = await productoDAO.delete(req.params.id);
+        if(!respuesta) throw new MWError('Error al eliminar el producto', 500);
+        res.status(200).json({message: 'Producto eliminado con exito', data: respuesta});   
+    });
 
-    async getAll(req, res){
-        try {
-            const respuesta = await productoDAO.getAll();
-            res.status(200).json(respuesta);
-        } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
-        }
-    }
+    getAll = catchAsync(async (req, res, next)=> {
+        const respuesta = await productoDAO.getAll();
+        if(!respuesta) throw new MWError('Error al listar todos los productos', 404);
+        res.status(200).json({message: 'Lista de todos los productos', data: respuesta});
+    });
 
-    async getOne(req, res){
-        try {
-            //Params: parametro que llega por la URL
-            // De esta forma se puede obtener el parametro especifico id en este caso.
-            //const {id} = req.params;
-            //Query params: parametro que llega por la URL
-            const respuesta = await productoDAO.getOne(req.params.id);
-            res.status(200).json(respuesta);
-        } catch (error) {
-            res.status(500).send(error);
-            console.log(error);
-        }
-    }
+    getOne = catchAsync(async (req, res, next)=> {
+        const respuesta = await productoDAO.getOne(req.params.id);
+        if(!respuesta) throw new MWError('Error al buscar el producto', 404);
+        res.status(200).json({message: 'Se encontro el producto con éxito', data: respuesta});   
+    });
 }
-
 // Se importa una instancia de esta clase
 export default new productoController();

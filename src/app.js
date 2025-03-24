@@ -8,8 +8,16 @@ import rutaTienda from './routes/rutaTienda.js';
 import rutaItemCarrito from './routes/rutaItemCarrito.js';
 import rutaPedido from './routes/rutaPedido.js';
 import rutaReseña from './routes/rutaReseña.js'
+import { MWError, adminError } from './utils/mwError.js';
+import morgan from 'morgan';
+
 
 const app = express();
+
+
+app.use(express.json());
+//Configurar el middleware de morgan para el registro de solicitudes
+app.use(morgan('combined'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +28,12 @@ app.use('/tienda', rutaTienda);
 app.use('/item_carrito', rutaItemCarrito);
 app.use('/pedido', rutaPedido);
 app.use('/resena', rutaReseña)
+
+app.all('*', (req, res, next)=> {
+    throw new MWError(`No se pudo acceder a ${req.originalUrl} en el servidor.`, 404);
+});
+//Middleware para el manejo de errores
+app.use(adminError);
 
 try {
     //Si no hay un perto estipulado en .env se usara el puerto 3000
