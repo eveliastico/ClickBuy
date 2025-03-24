@@ -7,9 +7,10 @@ import rutaProductos from './routes/rutaProductos.js';
 import rutaTienda from './routes/rutaTienda.js';
 import rutaItemCarrito from './routes/rutaItemCarrito.js';
 import rutaPedido from './routes/rutaPedido.js';
+import rutaReseña from './routes/rutaReseña.js'
 import { MWError, adminError } from './utils/mwError.js';
 import morgan from 'morgan';
-import rutaReseña from './routes/rutaReseña.js'
+
 
 const app = express();
 

@@ -46,3 +46,6 @@
 {"level":"error","message":"req is not defined"}
 {"level":"error","message":"req is not defined"}
 {"level":"error","message":"Invalid status code: { message: 'Lista de todos los productos' }"}
+{"level":"error","message":"No se pudo acceder a /resena en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resenas en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}

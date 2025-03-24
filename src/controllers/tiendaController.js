@@ -31,7 +31,7 @@ class tiendaController{
         if (!respuesta) {
             throw new MWError('Error al crear una tienda', 500);
         }
-        res.status(201).json({message: 'Tienda creada con éxito'});
+        res.status(200).json({message: 'Tienda creada con éxito'});
     });
 
     /*async update(req, res){
@@ -48,7 +48,7 @@ class tiendaController{
         if (!respuesta) {
             throw new MWError('Error al actualizar la tienda', 500);
         }
-        res.status(202).json({message: 'La tienda fue actualizada correctamente'}, respuesta);  
+        res.status(200).json({message: 'La tienda fue actualizada correctamente'}, respuesta);  
     });
     
     /*async delete(req, res){
