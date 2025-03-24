@@ -49,3 +49,15 @@
 {"level":"error","message":"No se pudo acceder a /resena en el servidor."}
 {"level":"error","message":"No se pudo acceder a /resenas en el servidor."}
 {"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"Resena validation failed: calificacion: Path `calificacion` is required., usuario: Path `usuario` is required., producto: Path `producto` is required."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"Resena validation failed: calificacion: Path `calificacion` is required., usuario: Path `usuario` is required., producto: Path `producto` is required."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}

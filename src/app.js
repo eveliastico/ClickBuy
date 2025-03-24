@@ -30,7 +30,7 @@ app.use('/pedido', rutaPedido);
 app.use('/resena', rutaReseña)
 
 app.all('*', (req, res, next)=> {
-    next(new MWError(`No se pudo acceder a ${req.originalUrl} en el servidor.`, 404));
+    throw new MWError(`No se pudo acceder a ${req.originalUrl} en el servidor.`, 404);
 });
 //Middleware para el manejo de errores
 app.use(adminError);
