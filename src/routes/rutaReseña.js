@@ -1,9 +1,11 @@
 import express from 'express';
 import reseñaController from '../controllers/reseñaController.js';
+import { validarReseña } from '../middlewares/validarEntradas.js';
+
 
 const route = express.Router()
 
-route.post('/', reseñaController.create)
+route.post('/', validarReseña, reseñaController.create)
 route.get('/', reseñaController.getAll)
 route.get('/:id', reseñaController.getOne)
 route.put('/:id', reseñaController.update)

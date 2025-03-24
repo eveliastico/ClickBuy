@@ -1,10 +1,13 @@
 import express from 'express';
 import tiendaController from '../controllers/tiendaController.js';
+import { validarTienda } from '../middlewares/validarEntradas.js';
+
+
 const route = express.Router();
 
 // En esta clase se definen las rutas que se pueden usar
 
-route.post('/',tiendaController.create);
+route.post('/' , validarTienda,tiendaController.create);
 route.get('/:id', tiendaController.getOne);
 route.get('/', tiendaController.getAll);
 route.put('/:id', tiendaController.update);
