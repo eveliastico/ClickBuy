@@ -13,6 +13,8 @@ Se necesitan instalar los modulos de:
     - body-parser
     npm i body-parser
     - npm i dotenv
+Se agregaron los modulos winston, winstone-express y morgan:
+    - npm i winston winston-express morgan
 Recomendacion
     Instalar nodemon para que no tengan que correr el archivo cada que lo actualicen
     Con nodemon registra cada que se hace alguna actualizacion en el codigo y se
@@ -24,7 +26,5 @@ Recomendacion
         "dev": "nodemon index.js"
     }
     Para correr la app se usara npm : npm run dev
-
-    Se agregaron los modulos winston, winstone-express y morgan:
-    npm i winston winston-express morgan
+  
 
