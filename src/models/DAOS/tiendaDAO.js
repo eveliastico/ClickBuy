@@ -4,52 +4,25 @@ import mongoose from 'mongoose';
 class tiendaDAO {
 
     async create(tienda){
-            try {
-                return await tiendaSchema.create(tienda);
-            } catch (error) {
-                console.error('Error al crear una tienda...'+ error);
-            }finally{
-                
-            }
-        }
+        return await tiendaSchema.create(tienda);
+    }
     
-        async getAll(){
-            try {
-                return await tiendaSchema.find(); 
-            } catch (error) {
-                console.error('Error al obtener las tiendas...'+ error);
-            }finally{
-            }
-        }
+    async getAll(){
+        return await tiendaSchema.find(); 
+    }
     
-        async getOne(id){
-            try {
-                return await tiendaSchema.findById({_id: new mongoose.Types.ObjectId(id)});
-            } catch (error) {
-                console.error('Error al obtener una tienda...'+ error);
-            }finally{
-            }
-        }
+    async getOne(id){
+        return await tiendaSchema.findById({_id: new mongoose.Types.ObjectId(id)});
+    }
     
-        async update(id, tienda){
-            try {
-                //tmbn puede usarse (_id: id) en lugar de (_id: new mongoose.Types.ObjectId(id))
-                return await tiendaSchema.findOneAndUpdate({_id: new mongoose.Types.ObjectId(id)}, tienda, {new: true});
-            } catch (error) {
-                console.error('Error al actualizar una tienda...');
-                console.log(error);
-            }finally{
-            }
-        }
+    async update(id, tienda){
+        //tmbn puede usarse (_id: id) en lugar de (_id: new mongoose.Types.ObjectId(id))
+        return await tiendaSchema.findOneAndUpdate({_id: new mongoose.Types.ObjectId(id)}, tienda, {new: true});
+    }
     
-        async delete(id){
-            try {
-                return await tiendaSchema.findOneAndDelete({_id: new mongoose.Types.ObjectId(id)});
-            } catch (error) {
-                console.error('Error al eliminar una tienda...'+ error);
-            }finally{
-            }
-        }
+    async delete(id){
+        return await tiendaSchema.findOneAndDelete({_id: new mongoose.Types.ObjectId(id)});
+    }
 }
 
 export default new tiendaDAO();

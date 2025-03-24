@@ -1,0 +1,74 @@
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios' }"}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios' }"}
+{"level":"error","message":"No se ha podido acceder a /comidas/ en el servidor."}
+{"level":"error","message":"No se ha podido acceder a /comidas/ en el servidor."}
+{"level":"error","message":"No se ha podido acceder a /comidas/ en el servidor."}
+{"level":"error"}
+{"level":"error","message":"No se ha podido acceder a /comidas/ en el servidor."}
+{"level":"error","message":"No se ha podido acceder a /comidas/ en el servidor."}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios' }"}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios' }"}
+{"level":"error","message":"No se ha podido acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios' }"}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios' }"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"No se pudo acceder a /tienda/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /tiendass/ en el servidor."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"No se pudo acceder a /pedidoss en el servidor."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"Producto validation failed: tienda: Path `tienda` is required., precio: Path `precio` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los productos' }"}
+{"level":"error","message":"Producto validation failed: tienda: Path `tienda` is required., precio: Path `precio` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"No se pudo acceder a /productos en el servidor."}
+{"level":"error","message":"Producto validation failed: tienda: Path `tienda` is required., precio: Path `precio` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"No se pudo acceder a /pedido en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios en el servidor."}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios ' }"}
+{"level":"error","message":"status is not defined"}
+{"level":"error","message":"status is not defined"}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios ' }"}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los productos' }"}
+{"level":"error","message":"Producto validation failed: tienda: Path `tienda` is required., precio: Path `precio` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"No se pudo acceder a /productos en el servidor."}
+{"level":"error","message":"No se pudo acceder a /tienda en el servidor."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los productos' }"}
+{"level":"error","message":"No se pudo acceder a /resena en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resenas en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"req is not defined"}
+{"level":"error","message":"Resena validation failed: calificacion: Path `calificacion` is required., usuario: Path `usuario` is required., producto: Path `producto` is required."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"Resena validation failed: calificacion: Path `calificacion` is required., usuario: Path `usuario` is required., producto: Path `producto` is required."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /resena/ en el servidor."}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios ' }"}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"Invalid status code: { message: 'Lista de todos los usuarios ' }"}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
