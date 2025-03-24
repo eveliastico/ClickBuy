@@ -1,12 +1,11 @@
 import express from 'express';
 import usuarioController from '../controllers/usuarioController.js';
+import { validarUsuario } from '../middlewares/validarEntradas.js';
+
 const route = express.Router();
-import { verificarToken } from '../helpers/autenticacion.js';
-import usuarioSchema from '../schemas/usuarioSchema.js';
 
 // En esta clase se definen las rutas que se pueden usar
-
-route.post('/register',usuarioController.create);
+route.post('/register',validarUsuario, usuarioController.create);
 route.get('/login', usuarioController.login);
 route.get('/:id', usuarioController.getOne);
 route.get('/', usuarioController.getAll);

@@ -1,10 +1,12 @@
 import express from 'express';
 import itemCarritoController from '../controllers/itemCarritoController.js';
+import { validarDetalleCarrito } from '../middlewares/validarEntradas.js';
+
 const route = express.Router();
 
 // En esta clase se definen las rutas que se pueden usar
 
-route.post('/',itemCarritoController.create);
+route.post('/',validarDetalleCarrito, itemCarritoController.create);
 route.get('/:id', itemCarritoController.getOne);
 route.get('/', itemCarritoController.getAll);
 route.put('/:id', itemCarritoController.update);
