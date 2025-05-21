@@ -9,6 +9,7 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express-winston": "^4.2.0",
     "mongoose": "^8.12.1",
     "morgan": "^1.10.0",

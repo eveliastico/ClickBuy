@@ -10,10 +10,9 @@ import rutaPedido from './routes/rutaPedido.js';
 import rutaReseña from './routes/rutaReseña.js'
 import { MWError, adminError } from './utils/mwError.js';
 import morgan from 'morgan';
-
+import cors from 'cors';
 
 const app = express();
-
 
 app.use(express.json());
 //Configurar el middleware de morgan para el registro de solicitudes
@@ -21,13 +20,16 @@ app.use(morgan('combined'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cors({ origin: "http://127.0.0.1:5500" }));
+app.options('*', cors());
 app.use('/usuarios', rutaUsuarios);
 app.use('/productos', rutaProductos);
 app.use('/tienda', rutaTienda);
 app.use('/item_carrito', rutaItemCarrito);
 app.use('/pedido', rutaPedido);
 app.use('/resena', rutaReseña)
+
+
 
 app.all('*', (req, res, next)=> {
     throw new MWError(`No se pudo acceder a ${req.originalUrl} en el servidor.`, 404);

@@ -72,3 +72,7 @@
 {"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
 {"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
 {"level":"error","message":"No se pudo acceder a /usuarios/ en el servidor."}
+{"level":"error","message":"No se pudo acceder a / en el servidor."}
+{"level":"error","message":"No se pudo acceder a /favicon.ico en el servidor."}
+{"level":"error","message":"No se pudo acceder a /producto en el servidor."}
+{"level":"error","message":"No se pudo acceder a /favicon.ico en el servidor."}
