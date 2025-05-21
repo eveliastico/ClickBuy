@@ -35,6 +35,14 @@ class productoController{
         if(!respuesta) throw new MWError('Error al buscar el producto', 404);
         res.status(200).json({message: 'Se encontro el producto con éxito', data: respuesta});   
     });
+
+    //Consulta para buscar productos por IDVendedor
+    getByIdVendedor = catchAsync(async (req, res, next)=> {
+        const respuesta = await productoDAO.getByIdVendedor(req.params.idVendedor);
+        if(!respuesta) throw new MWError('Error al buscar el producto', 404);
+        res.status(200).json({message: 'Se encontro el producto con éxito', data: respuesta});   
+    });
+    
 }
 // Se importa una instancia de esta clase
 export default new productoController();

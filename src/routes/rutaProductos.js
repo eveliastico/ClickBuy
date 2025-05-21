@@ -9,6 +9,8 @@ const route = express.Router();
 route.post('/', validarProducto, productoController.create);
 route.get('/:id', productoController.getOne);
 route.get('/', productoController.getAll);
+// Consulta para buscar productos por IDVendedor
+route.get('/vendedor/:idVendedor', productoController.getByIdVendedor);
 route.put('/:id', validarProducto, productoController.update);
 route.delete('/:id', productoController.delete);
 
