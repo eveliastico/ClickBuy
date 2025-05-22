@@ -6,7 +6,7 @@ const route = express.Router();
 
 // En esta clase se definen las rutas que se pueden usar
 route.post('/register',validarUsuario, usuarioController.create);
-route.get('/login', usuarioController.login);
+route.post('/login', usuarioController.login);
 route.get('/:id', usuarioController.getOne);
 route.get('/', usuarioController.getAll);
 route.put('/:id', usuarioController.update);

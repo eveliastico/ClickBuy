@@ -56,7 +56,7 @@ class usuarioController{
             console.log(error);
         }
     }
-
+    //Función que permite registrar un nuevo usuario
     async register(req, res){
         try{
             const {correoElectronico, nombre, contrasena, tipoUsuario} = req.body;
@@ -75,34 +75,32 @@ class usuarioController{
                 contrasena: claveEncryptada
 
             });
-
             res.status(201).json(data);
         } catch (e) {
             console.log(e);
             res.status(500).send(e);
         }
     }
-
+    //Función que permite iniciar sesión
     async login(req, res){
-        const { correoElectronico, contrasena} = req.body;
-        console.log(`CORREO 1: ${correoElectronico}`)
-        const usuarioExiste = await usuariosDAO.getByEmail(correoElectronico);
-        if (!usuarioExiste) {
+        try {
+            const { correoElectronico, contrasena} = req.body;
+            console.log(`CORREO 1: ${correoElectronico}`);
+            const usuarioExiste = await usuariosDAO.getByEmail(correoElectronico);
+            if (!usuarioExiste || usuarioExiste.contrasena !== contrasena) {
             return res.status(400).json({ error: 'El usuario no existe '});
+            }
+            const token = generarToken(correoElectronico);
+            return res.status(200).json({ mensaje: 'Usuario Autenticado', tipoUsuario:usuarioExiste.tipoUsuario, token });
+        } catch (error) {
+            console.error('Error en iniciar Sesión', error);
+            res.status(500).json({error: 'Error al iniciar sesión'});
         }
-/*
+        /*
         const claveValida = await bcrypt.compare(contrasena, usuarioExiste.constrasena);
-        
         if(!claveValida) {
             return res.status(400).json({ error: 'Clave no valida'});
-        }
-*/
-        if(usuarioExiste.contrasena == contrasena){
-            const token = generarToken(correoElectronico);
-            return res.status(200).json({ msg: 'Usuario Autenticado', token});
-        } else{
-            return res.status(500).json({ error: 'Contraseña incorrecta'});           
-        } 
+        }*/
     }
 }
 // Se importa una instancia de esta clase
