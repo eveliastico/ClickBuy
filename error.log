@@ -76,3 +76,8 @@
 {"level":"error","message":"No se pudo acceder a /favicon.ico en el servidor."}
 {"level":"error","message":"No se pudo acceder a /producto en el servidor."}
 {"level":"error","message":"No se pudo acceder a /favicon.ico en el servidor."}
+{"level":"error","message":"No se pudo acceder a / en el servidor."}
+{"level":"error","message":"No se pudo acceder a /favicon.ico en el servidor."}
+{"level":"error","message":"input must be a 24 character hex string, 12 byte Uint8Array, or an integer"}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., apellido: Path `apellido` is required., nombre: Path `nombre` is required."}
+{"level":"error","message":"usuarios validation failed: contrasena: Path `contrasena` is required., correoElectronico: Path `correoElectronico` is required., apellido: Path `apellido` is required., nombre: Path `nombre` is required."}

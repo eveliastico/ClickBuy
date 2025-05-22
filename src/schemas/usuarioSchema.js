@@ -5,15 +5,22 @@ const usuarioSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    apellido: {
+        type: String,
+        required: true
+    },
+    fechaNacimiento: {
+        type: Date,
+        required: true
+    },
+    telefono: {
+        type: String,
+        required: true
+    },
     correoElectronico: {
         type: String,
         required: true,
-        //Prueba de validacion para correo
         unique: true,
-        validate: {
-            validator: (v) => /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(v),
-            message: 'El formato del correo electronico no es correcto',
-        },
     },
     contrasena: {
         type: String,
